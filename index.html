@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///C:/Users/user/.vscode/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Melina Pandey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: black;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Me Section -->
+  <h2>About Me</h2>
+  <p>
+    Hello! I'm <strong>Melina Pandey</strong>,
+    <span id="typing-text" style="font-weight: normal;">a passionate web developer with love for creating elegant and efficient solutions. I have experience in in building responsive and userfriendly websites .</span>
+  </p>
+
+  <!-- Skills Section -->
+  <h2>Skills</h2>
+  <p>HTML &nbsp;&nbsp; CSS &nbsp;&nbsp; JavaScript &nbsp;&nbsp; Planning</p>
+
+  <!-- Experience Section -->
+  <h2>Experience</h2>
+  <ul>
+    <li><strong>Junior Web Developer</strong> at Future Devs (2023 - Present)</li>
+    <li><strong>Intern</strong> at CodeLab Nepal (2022 - 2023)</li>
+  </ul>
+
+  <!-- Education Section -->
+  <h2>Education</h2>
+  <ul>
+    <li>Bachelor's in Computer Science, XYZ University (2020 - 2024)</li>
+  </ul>
+
+  <!-- Contact Section -->
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:melinapandey@example.com">melinapandey@example.com</a></p>
+  <p>Phone: +81-9800000000</p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/melina-pandey" target="_blank">linkedin.com/in/melina-pandey</a></p>
+
+  <!-- Buttons -->
+  <div style="margin-top: 20px;">
+    <button onclick="window.location.href=&#39;mailto:melinapandey@example.com&#39;">📧 Email Me</button>
+    <button onclick="changeBackground()">🎨 Change Background</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Typing effect
+    const typingText = "a passionate web developer with love for creating elegant and efficient solutions. I have experience in in building responsive and userfriendly websites .";
+    let charIndex = 0;
+    function typeEffect() {
+      if (charIndex < typingText.length) {
+        document.getElementById("typing-text").textContent += typingText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+    typeEffect();
+
+    // Background color changer
+    function changeBackground() {
+      const colors = ['#f9f9f9', '#ffe4e1', '#e0ffff', '#e6ffe6', '#fffacd', '#f0f8ff'];
+      document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+
+
+
+</body></html>
