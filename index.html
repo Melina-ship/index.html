@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///C:/Users/user/.vscode/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melina Pandey - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s ease;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    hr {
+      margin-bottom: 1rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: black;
+      width: 2px;
+      animation: blink 0.7s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .email-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .bg-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>About Me</h2>
+    <hr>
+    <p><span id="typing-text">Hello! I'm Melina Pandey, a passionate web developer with a love for creating elegant and efficient solutions. I have experience in building responsive and user-friendly websites.</span><span class="cursor">|</span></p>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <hr>
+    <p>HTML &nbsp; CSS &nbsp; JavaScript &nbsp; Planning</p>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <hr>
+    <ul>
+      <li><strong>Web Developer</strong> at ABC Corp (2021 - Present)</li>
+      <li><strong>Junior Developer</strong> at XYZ Inc (2019 - 2021)</li>
+    </ul>
+  </div>
+
+  <button class="email-btn" onclick="location.href=&#39;mailto:melina.pandey@example.com&#39;">Email Me</button>
+  <button class="bg-btn" onclick="changeBackground()">Change Background</button>
+
+  <script>
+    // Typing Effect
+    const text = "Hello! I'm Melina Pandey, a passionate web developer with a love for creating elegant and efficient solutions. I have experience in building responsive and user-friendly websites.";
+    const typingTextElement = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        typingTextElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 40); // Typing speed
+      }
+    }
+
+    window.onload = typeEffect;
+
+    // Change Background Color
+    const colors = ['#f9f9f9', '#e0f7fa', '#fff3e0', '#f3e5f5', '#e8f5e9'];
+    let colorIndex = 0;
+
+    function changeBackground() {
+      colorIndex = (colorIndex + 1) % colors.length;
+      document.body.style.backgroundColor = colors[colorIndex];
+    }
+  </script>
+
+</body></html>
