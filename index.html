@@ -2,106 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me - Melina Pandey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melina Pandey - Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
       color: #333;
     }
+
     h2 {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
+
+    .section {
+      margin-bottom: 30px;
     }
-    ul li::before {
-      content: "• ";
-      color: black;
+
+    .skills span {
+      margin-right: 15px;
+      display: inline-block;
     }
+
     button {
       padding: 10px 20px;
-      margin: 5px;
-      font-size: 14px;
+      margin-top: 15px;
       border: none;
       border-radius: 5px;
-      background-color: #007bff;
-      color: white;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #0056b3;
+
+    .email-button {
+      background-color: #007BFF;
+      color: white;
     }
-    a {
-      color: #007bff;
+
+    .bg-button {
+      background-color: #444;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .contact-info div {
+      background-color: #f1f1f1;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .contact-info div:hover {
+      background-color: #e0e0e0;
+    }
+
+    .contact-info a {
       text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <!-- About Me Section -->
-  <h2>About Me</h2>
-  <p>
-    <span id="typing-text" style="font-weight: normal;"></span>
-  </p>
-
-  <!-- Skills Section -->
-  <h2>Skills</h2>
-  <p>HTML &nbsp;&nbsp; CSS &nbsp;&nbsp; JavaScript &nbsp;&nbsp; Planning</p>
-
-  <!-- Experience Section -->
-  <h2>Experience</h2>
-  <ul>
-    <li><strong>Junior Web Developer</strong> at Future Devs (2023 - Present)</li>
-    <li><strong>Intern</strong> at CodeLab Nepal (2022 - 2023)</li>
-  </ul>
-
-  <!-- Education Section -->
-  <h2>Education</h2>
-  <ul>
-    <li>Bachelor's in Computer Science, XYZ University (2020 - 2024)</li>
-  </ul>
-
-  <!-- Contact Section -->
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:melinapandey@example.com">melinapandey@example.com</a></p>
-  <p>Phone: +977-9800000000</p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/melina-pandey" target="_blank">linkedin.com/in/melina-pandey</a></p>
-
-  <!-- Buttons -->
-  <div style="margin-top: 20px;">
-    <button onclick="window.location.href='mailto:melinapandey@example.com'">📧 Email Me</button>
-    <button onclick="changeBackground()">🎨 Change Background</button>
+  <div class="section">
+    <h2>About Me</h2>
+    <p>Hello! I'm <strong>Melina Pandey</strong>,</p>
+    <p id="typing"></p>
   </div>
 
-  <!-- JavaScript -->
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Planning</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Amature</strong>in Web Developing</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor's in Computer Science, University of Technology (2015 - 2019)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div><a href="mailto:melina.pandey@example.com">📧 melina.pandey@example.com</a></div>
+      <div>📱 +81 1470876587</div>
+      <div><a href="https://linkedin.com/in/melinapandey" target="_blank">🔗 LinkedIn</a></div>
+    </div>
+
+    <a href="mailto:melina.pandey@example.com">
+      <button class="email-button">Email Me</button>
+    </a>
+    <button class="bg-button" onclick="changeBgColor()">Change Background Color</button>
+  </div>
+
   <script>
-    // Typing effect
-    const typingText = "Hello! I am Pandey Melina, a passionate web developer with a love and creating elegant efficient solutions. I have experience in building responsive and user friendly websites.";
-    let charIndex = 0;
-    function typeEffect() {
-      if (charIndex < typingText.length) {
-        document.getElementById("typing-text").textContent += typingText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeEffect, 100);
+    // Typing Effect
+    const text = "A passionate web developer with a love for creating elegant and efficient solutions. Also, a creative developer who enjoys turning ideas into interactive and engaging digital experiences. I have experience in building responsive and user-friendly websites.";
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 30);
       }
     }
-    typeEffect();
 
-    // Background color changer
-    function changeBackground() {
-      const colors = ['#f9f9f9', '#ffe4e1', '#e0ffff', '#e6ffe6', '#fffacd', '#f0f8ff'];
-      document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    window.onload = type;
+
+    // Background Color Change
+    function changeBgColor() {
+      const colors = ["#f0f8ff", "#ffe4e1", "#e6ffe6", "#f9f9f9", "#fff0f5"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
     }
   </script>
 
